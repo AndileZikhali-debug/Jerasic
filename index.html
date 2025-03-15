@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayHex - Futuristic Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="music-player">
+        <h1>PlayHex</h1>
+
+        <!-- Dark/Light Mode Toggle -->
+        <button id="modeToggle">🌙</button>
+
+        <!-- Search Bar -->
+        <input type="text" id="search" placeholder="Search songs...">
+
+        <!-- Genre Selector -->
+        <div class="genres">
+            <button class="genre-btn" data-genre="all">All</button>
+            <button class="genre-btn" data-genre="hiphop">Hip-Hop</button>
+            <button class="genre-btn" data-genre="edm">EDM</button>
+            <button class="genre-btn" data-genre="jazz">Jazz</button>
+        </div>
+
+        <div class="player-container">
+            <div class="glass">
+                <!-- Playlist -->
+                <ul id="playlist"></ul>
+
+                <!-- Album Cover -->
+                <img id="album-cover" src="assets/covers/default.jpg" alt="Album Cover">
+
+                <!-- Visualizer -->
+                <canvas id="visualizer"></canvas>
+
+                <!-- Controls -->
+                <div class="controls">
+                    <button id="prev">⏮</button>
+                    <button id="playPause">▶️</button>
+                    <button id="next">⏭</button>
+                </div>
+
+                <!-- Equalizer Animation -->
+                <div class="equalizer">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+
+                <input type="range" id="progress" value="0">
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+                
+                <p id="current-song">Select a song...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
