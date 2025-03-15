@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    --bg-dark: #0f0c29;
+    --bg-light: #f0f0f0;
+    --text-dark: #fff;
+    --text-light: #333;
+    --neon-glow: cyan;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--bg-dark);
+    color: var(--text-dark);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Dark/Light Mode Toggle */
+.light-mode {
+    background: var(--bg-light);
+    color: var(--text-light);
+}
+
+h1 {
+    text-transform: uppercase;
+    background: linear-gradient(90deg, cyan, magenta);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+/* Equalizer Animation */
+.equalizer span {
+    display: inline-block;
+    width: 8px;
+    height: 30px;
+    background: cyan;
+    margin: 2px;
+    animation: equalizer 1s infinite alternate;
+}
+
+@keyframes equalizer {
+    0% { transform: scaleY(1); }
+    100% { transform: scaleY(1.5); }
+}
+
+/* Playlist */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .glass {
+        width: 90%;
+    }
+}
