@@ -3,57 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayHex - Futuristic Music Player</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jerassic Player - Futuristic Music Player</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="music-player">
-        <h1>PlayHex</h1>
+    <div class="player-container">
+        <h1>🎧 Jerassic - Cyber Music Player</h1>
 
-        <!-- Dark/Light Mode Toggle -->
-        <button id="modeToggle">🌙</button>
+        <div class="album-art-container">
+            <img id="album-cover" src="assets/covers/song1.jpg" alt="Album Cover">
+            <canvas id="visualizer"></canvas> 
+        </div>
 
-        <!-- Search Bar -->
-        <input type="text" id="search" placeholder="Search songs...">
+        <h2 id="current-song">Now Playing: Cyber Groove</h2>
 
-        <!-- Genre Selector -->
-        <div class="genres">
+        <div class="controls">
+            <button id="prev">⏮</button>
+            <button id="playPause">▶</button>
+            <button id="next">⏭</button>
+        </div>
+
+        <input type="range" id="progress" value="0">
+        <input type="range" id="volume" value="50" max="100">
+
+        <div class="genre-filters">
             <button class="genre-btn" data-genre="all">All</button>
-            <button class="genre-btn" data-genre="hiphop">Hip-Hop</button>
             <button class="genre-btn" data-genre="edm">EDM</button>
+            <button class="genre-btn" data-genre="hiphop">Hip-Hop</button>
             <button class="genre-btn" data-genre="jazz">Jazz</button>
         </div>
 
-        <div class="player-container">
-            <div class="glass">
-                <!-- Playlist -->
-                <ul id="playlist"></ul>
+        <input type="text" id="search" placeholder="Search music...">
 
-                <!-- Album Cover -->
-                <img id="album-cover" src="assets/covers/default.jpg" alt="Album Cover">
+        <ul id="playlist"></ul>
 
-                <!-- Visualizer -->
-                <canvas id="visualizer"></canvas>
-
-                <!-- Controls -->
-                <div class="controls">
-                    <button id="prev">⏮</button>
-                    <button id="playPause">▶️</button>
-                    <button id="next">⏭</button>
-                </div>
-
-                <!-- Equalizer Animation -->
-                <div class="equalizer">
-                    <span></span><span></span><span></span><span></span><span></span>
-                </div>
-
-                <input type="range" id="progress" value="0">
-                <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
-                
-                <p id="current-song">Select a song...</p>
-            </div>
-        </div>
+        <button id="modeToggle">🌗 Toggle Mode</button>
     </div>
 
     <script src="script.js"></script>
