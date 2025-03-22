@@ -3,70 +3,124 @@
 body {
     font-family: 'Orbitron', sans-serif;
     background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-    color: white;
+    color: #0ff;
     text-align: center;
     transition: all 0.5s ease-in-out;
 }
 
-.player-container {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.4);
+/* Background Animation */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, rgba(0, 0, 0, 1) 80%);
+    z-index: -1;
 }
 
+/* Futuristic Music Player Box */
+.player-container {
+    max-width: 450px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.8);
+    border: 2px solid cyan;
+}
+
+/* Album Cover */
 .album-art-container {
     position: relative;
+    margin-bottom: 10px;
 }
 
 #album-cover {
     width: 100%;
     border-radius: 15px;
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.6);
+    box-shadow: 0px 0px 20px rgba(255, 0, 255, 0.7);
+    transition: transform 0.3s ease-in-out;
 }
 
+#album-cover:hover {
+    transform: scale(1.05);
+}
+
+/* Buttons with Neon Glow */
 .controls button {
     background: transparent;
     border: 2px solid cyan;
-    padding: 10px;
-    font-size: 20px;
+    padding: 15px;
+    font-size: 24px;
     border-radius: 50%;
     color: cyan;
     transition: 0.3s ease;
     cursor: pointer;
+    box-shadow: 0px 0px 10px cyan;
 }
 
 .controls button:hover {
     background: cyan;
     color: black;
+    box-shadow: 0px 0px 20px cyan;
 }
 
+/* Progress & Volume Bars */
 #progress, #volume {
     width: 100%;
     margin-top: 10px;
     appearance: none;
-    background: cyan;
-    height: 5px;
+    background: linear-gradient(90deg, cyan, magenta);
+    height: 8px;
     border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
 }
 
+#progress:hover, #volume:hover {
+    box-shadow: 0px 0px 15px magenta;
+}
+
+/* Genre Filter Buttons */
 .genre-btn {
     background: transparent;
-    border: 1px solid cyan;
-    color: cyan;
-    padding: 5px 10px;
+    border: 2px solid magenta;
+    color: magenta;
+    padding: 8px 12px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px magenta;
 }
 
 .genre-btn:hover {
-    background: cyan;
+    background: magenta;
     color: black;
+    box-shadow: 0px 0px 20px magenta;
 }
 
+/* Search Bar */
+#search {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 0, 255, 0.2);
+    color: cyan;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+}
+
+#search:focus {
+    box-shadow: 0px 0px 20px cyan;
+}
+
+/* Dark Mode Toggle */
 #modeToggle {
     background: black;
     color: white;
@@ -75,11 +129,14 @@ body {
     border: none;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0px 0px 10px cyan;
+    border-radius: 10px;
 }
 
 #modeToggle:hover {
-    background: white;
+    background: cyan;
     color: black;
+    box-shadow: 0px 0px 20px cyan;
 }
 
 /* Light Mode */
@@ -89,7 +146,7 @@ body.light-mode {
 }
 
 body.light-mode .player-container {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 body.light-mode .controls button {
