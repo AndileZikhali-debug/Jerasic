@@ -154,7 +154,7 @@ body.light-mode .controls button {
     color: black;
 }
 
-body.light-mode .controls button:hover {
+body.light-mode .conntrols button:hover {
     background: black;
     color: white;
-}
+    }
