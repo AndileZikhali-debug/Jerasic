@@ -1,85 +1,103 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-:root {
-    --bg-dark: #0f0c29;
-    --bg-light: #f0f0f0;
-    --text-dark: #fff;
-    --text-light: #333;
-    --neon-glow: cyan;
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 body {
     font-family: 'Orbitron', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: var(--bg-dark);
-    color: var(--text-dark);
-    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: white;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
 }
 
-/* Dark/Light Mode Toggle */
-.light-mode {
-    background: var(--bg-light);
-    color: var(--text-light);
-}
-
-h1 {
-    text-transform: uppercase;
-    background: linear-gradient(90deg, cyan, magenta);
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: neon-flicker 1.5s infinite alternate;
-}
-
-@keyframes neon-flicker {
-    0% { opacity: 0.8; }
-    100% { opacity: 1; }
-}
-
-.glass {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+.player-container {
+    max-width: 400px;
+    margin: auto;
     padding: 20px;
-    width: 400px;
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.4);
 }
 
-/* Equalizer Animation */
-.equalizer span {
-    display: inline-block;
-    width: 8px;
-    height: 30px;
-    background: cyan;
-    margin: 2px;
-    animation: equalizer 1s infinite alternate;
+.album-art-container {
+    position: relative;
 }
 
-@keyframes equalizer {
-    0% { transform: scaleY(1); }
-    100% { transform: scaleY(1.5); }
+#album-cover {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.6);
 }
 
-/* Playlist */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
+.controls button {
+    background: transparent;
+    border: 2px solid cyan;
     padding: 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    color: cyan;
+    transition: 0.3s ease;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
-li:hover {
-    background: rgba(255, 255, 255, 0.2);
+.controls button:hover {
+    background: cyan;
+    color: black;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 600px) {
-    .glass {
-        width: 90%;
-    }
+#progress, #volume {
+    width: 100%;
+    margin-top: 10px;
+    appearance: none;
+    background: cyan;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.genre-btn {
+    background: transparent;
+    border: 1px solid cyan;
+    color: cyan;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.genre-btn:hover {
+    background: cyan;
+    color: black;
+}
+
+#modeToggle {
+    background: black;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#modeToggle:hover {
+    background: white;
+    color: black;
+}
+
+/* Light Mode */
+body.light-mode {
+    background: white;
+    color: black;
+}
+
+body.light-mode .player-container {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .controls button {
+    border-color: black;
+    color: black;
+}
+
+body.light-mode .controls button:hover {
+    background: black;
+    color: white;
 }
