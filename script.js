@@ -1,6 +1,6 @@
 const playlist = [
     { title: "Cyber Groove", artist: "Hex Beat", genre: "edm", src: "SpotiDownloader.com - Missed Calls - Lowfeye.mp3", cover: "assets/covers/song1.jpg" },
-    { title: "Neon Pulse", artist: "Synth Lord", genre: "hiphop", src: "assets/songs/song2.mp3", cover: "assets/covers/song2.jpg" },
+    { title: "Neon Pulse", artist: "Synth Lord", genre: "hiphop", src: "SpotiDownloader.com - Where I Belong - Touchline.mp3, cover: "assets/covers/song2.jpg" },
     { title: "Electric Dreams", artist: "AI DJ", genre: "jazz", src: "assets/songs/song3.mp3", cover: "assets/covers/song3.jpg" }
 ];
 
